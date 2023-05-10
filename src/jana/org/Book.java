@@ -19,7 +19,7 @@ public class Book {
 
 	public void setTitle(String title) throws Exception {
 		
-		if(title.length()<=1 || title.length()>= 34) {
+		if(title.length() <= 1 || title.length() > 34) {
 			
 			throw new Exception("il titolo deve essere composto da almeno 1 carattere");
 		}
@@ -33,9 +33,9 @@ public class Book {
 
 	public void setAuthor(String author) throws Exception {
 		
-if(author.length()<= 3 || author.length()>= 34) {
+if(author.length() <= 3 || author.length() > 34) {
 			
-			throw new Exception("il nome deve essere composto da almeno 1 carattere");
+			throw new Exception("il nome deve essere composto da piu di 3 caratteri carattere");
 		}
 		
 		this.author = author;
