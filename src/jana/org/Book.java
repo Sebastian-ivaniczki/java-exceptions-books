@@ -65,8 +65,7 @@ if(author.length() <= 3 || author.length() > 34) {
 	
 	@Override
 	public String toString() {
-		return "Titolo libro: " + title + " Autore: " + author +
-				" \neditor: " + editor + " numero pagine: " + pages;
+		return "Titolo libro: " + getTitle() + " Autore: " + getAuthor() + " editor: " + getEditor() + " numero pagine: " + getPages();
 	}
 	
 }

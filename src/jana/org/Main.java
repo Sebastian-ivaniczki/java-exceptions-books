@@ -1,5 +1,8 @@
 package jana.org;
 
+
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Main {
@@ -29,19 +32,50 @@ public class Main {
 			try {
 				Book b1 = new Book(title, author, editor, pages);
 				bArr[i-1] = b1;
+				
 			} catch (Exception e) {
 				System.err.println("Errore nella creazione del libro\n" + e.getMessage());
+				sc.close();
 				return;
+			}
+			
+			try {
+				FileWriter myWriter = new FileWriter("C:/Users/sivan/OneDrive/Desktop/mio.txt");
+				
+				
+				
+				//myWriter.write(bArr.toString());
+				for(Book book : bArr) {
+					myWriter.write(book.toString());
+					
+				}
+				myWriter.close();
+				
+			} catch (Exception e) {
+				
+				e.printStackTrace();
 			}
 			
 			
 		}
-		sc.close();
+		sc.close();		
 		
 		
+		try {
+            File file = new File("C:/Users/sivan/OneDrive/Desktop/mio.txt");
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                
+                System.out.println(line);
+            }
+
+            scanner.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 		
-		
-		
-		
-	}
+	
 }
