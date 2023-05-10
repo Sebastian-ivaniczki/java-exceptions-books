@@ -3,6 +3,7 @@ package jana.org;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -36,29 +37,28 @@ public class Main {
 			} catch (Exception e) {
 				System.err.println("Errore nella creazione del libro\n" + e.getMessage());
 				sc.close();
-				return;
+				
+				
 			}
-			
-			try {
-				FileWriter myWriter = new FileWriter("C:/Users/sivan/OneDrive/Desktop/mio.txt");
-				
-				
-				
-				//myWriter.write(bArr.toString());
-				for(Book book : bArr) {
-					myWriter.write(book.toString());
-					
-				}
-				myWriter.close();
-				
-			} catch (Exception e) {
-				
-				e.printStackTrace();
-			}
-			
 			
 		}
 		sc.close();		
+		FileWriter myWriter;
+		try {
+			myWriter = new FileWriter("C:/Users/sivan/OneDrive/Desktop/mio.txt");
+
+			for(int x = 0; x<valUser; x++) {
+				Book book = bArr[x];
+				
+				myWriter.write(book.toString());
+			}
+			myWriter.close();
+			
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 		
 		
 		try {
